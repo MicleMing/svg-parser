@@ -1,10 +1,11 @@
 {
   "name": "m-svg-parser",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "parse svg to virtual dom",
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
+    "p": "npm run build && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
