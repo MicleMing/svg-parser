@@ -24,8 +24,9 @@ function createProperties(el) {
 
   const attributes = properties.attributes
   /* eslint-disable */
-  for (let i = 0; i < el.attributes.length; i += 1) {
-    const attr = el.attributes[i]
+  const eleAttrs = el.attributes
+  for (let i = 0; i < eleAttrs && eleAttrs.length; i += 1) {
+    const attr = eleAttrs[i]
     const attrName = attr.name
     const attrValue = attr.value
     const namespace = SVGAttributeNamespace(attrName)
@@ -98,9 +99,9 @@ export default function parser(el, rules = [], attr) {
       throw new Error('DOMParser is not available.')
     }
     domParser = domParser || new DOMParser()
-    svgEl = parser.parseFromString(el, 'image/svg+xml')
+    svgEl = domParser.parseFromString(el, 'image/svg+xml')
   }
-  if (typeof svgEl !== 'object' || !svgEl || !el.nodeType) {
+  if (typeof svgEl !== 'object' || !svgEl || !svgEl.nodeType) {
     throw new Error('invalid dom node', el)
   }
   return createNode(svgEl, rules, attr)
