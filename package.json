@@ -1,9 +1,10 @@
 {
-  "name": "svg-parser",
+  "name": "m-svg-parser",
   "version": "1.0.0",
   "description": "parse svg to virtual dom",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -14,5 +15,8 @@
   "license": "MIT",
   "dependencies": {
     "virtual-dom": "^2.1.1"
+  },
+  "devDependencies": {
+    "rollup": "^0.56.4"
   }
 }
