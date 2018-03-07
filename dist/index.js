@@ -377,7 +377,8 @@ function createProperties(el) {
   const attributes = properties.attributes;
   /* eslint-disable */
   const eleAttrs = el.attributes;
-  for (let i = 0; i < eleAttrs && eleAttrs.length; i += 1) {
+  const len = eleAttrs && eleAttrs.length || 0;
+  for (let i = 0; i < len; i += 1) {
     const attr = eleAttrs[i];
     const attrName = attr.name;
     const attrValue = attr.value;

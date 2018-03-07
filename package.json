@@ -1,12 +1,12 @@
 {
   "name": "m-svg-parser",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "parse svg to virtual dom",
   "main": "dist/index.js",
   "scripts": {
     "build": "rollup -c",
     "p": "npm run build && npm publish",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test --recursive --require babel-core/register  --require ./test/setup.js || true"
   },
   "keywords": [
     "svg",
@@ -18,6 +18,19 @@
     "virtual-dom": "^2.1.1"
   },
   "devDependencies": {
-    "rollup": "^0.56.4"
+    "babel-core": "^6.26.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "chai": "^4.1.2",
+    "jsdom": "^11.6.2",
+    "mocha": "^5.0.2",
+    "rollup": "^0.56.4",
+    "sinon": "^4.4.2"
+  },
+  "babel": {
+    "presets": [
+      "stage-3",
+      "latest"
+    ]
   }
 }
